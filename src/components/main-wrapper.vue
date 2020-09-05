@@ -1,12 +1,11 @@
 <template>
   <div class="main-wrapper">
-    main wrapper
-    <main-container></main-container>
+    <filters></filters>
   </div>
 </template>
 
 <script>
-import MainContainer from './main-container';
+import Filters from './filters.vue';
 
 export default {
   name: 'main-wrapper',
@@ -16,7 +15,7 @@ export default {
     }
   },
   components: {
-    MainContainer,
+    Filters,
   }
 }
 </script>
@@ -36,5 +35,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.main-wrapper {
+  padding: 30px;
 }
 </style>
