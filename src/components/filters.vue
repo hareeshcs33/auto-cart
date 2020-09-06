@@ -6,6 +6,7 @@
         <div class="filter-label">selected Filters:</div>
         <div class="selected-list">
           <span>Continental</span>
+          <i class="fas fa-times x-icon"></i>
         </div>
       </div>
       <div class="filter-box sort-filter">
@@ -54,16 +55,16 @@ header {
   display: flex;
   align-items: center;
 }
-.selected-list span::after {
-  content: "x";
+.selected-list .x-icon {
   color: #fff;
   background-color: #000;
+  display: block;
   width: 15px;
   height: 15px;
-  display: block;
   border-radius: 100%;
   text-align: center;
   margin-left: 10px;
+  padding: 2px;
 }
 .sort-filter select {
   background-color: #e2e2e2;
