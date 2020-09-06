@@ -25,7 +25,8 @@ header {
   padding-bottom: 10px;
 }
 .page-title {
-  margin-bottom: 22px;
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 .filter-block {
   display: flex;
@@ -66,9 +67,11 @@ header {
 }
 .sort-filter select {
   background-color: #e2e2e2;
+  min-width: 100px;
   height: 30px;
+  border: 1px solid #000;
   border-radius: 16px;
-  padding: 7px;
+  padding: 5px 8px;
 }
 @media (max-width: 580px) {
   .main-wrapper {
