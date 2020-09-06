@@ -11,7 +11,10 @@
             <div class="label">SUV</div>
         </div>
         <div class="wrap-box wrap-4">
-            <div class="label">Stock <i class="fas fa-check check-icon"></i></div>
+            <div class="label" :class="isStock === 'inStock' ? 'in-stock-label':''">Stock <i class="fas" :class="stockAvailable"></i>
+                <div class="no-stock" v-if="isStock === 'noStock'">Back in 1 week!</div>
+                <div class="alert-stock" v-if="isStock === 'alertStock'">8 Tires Left</div>
+            </div>
         </div>
         <div class="wrap-box wrap-5">
             <div class="label">Price <span>$340</span></div>
@@ -36,6 +39,18 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    props: [
+        'isStock'
+    ],
+    computed: {
+    stockAvailable: function () {
+      return this.isStock === 'inStock' ? 'check-icon fa-check' : this.isStock === 'alertStock' ? 'alert-icon fa-exclamation' : 'into-icon fa-times';
+    }
+  }
+}
+</script>
 <style scoped>
 .card {
     background-color: #fff;
@@ -118,6 +133,8 @@
 .alert-icon {
     color: #fff;
     font-size: 12px;
+    width: 12px;
+    height: 12px;
     border-radius: 100%;
     padding: 2px;
 }
@@ -135,10 +152,19 @@
     display: none;
     margin-top: 5px;
 }
+.alert-stock {
+    color: #000;
+}
+.no-stock {
+    color: #d93551;
+}
+.no-stock,
+.alert-stock {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px 5px 0 0;
+}
 @media (max-width: 992px) {
-    .add-cta-text {
-        /* display: none; */
-    }
     .product-card {
         width: 49%;
         flex-flow: row wrap;
@@ -149,16 +175,17 @@
         margin-bottom: 5px;
     }
     .wrap-2 {
-        width: 26%;
+        width: 24%;
         order: 3;
         margin-bottom: 5px;
+        padding-right: 5px;
     }
     .wrap-3 {
         width: 50%;
         order: 2;
     }
     .wrap-4 {
-        width: 24%;
+        width: 26%;
         order: 4;
     }
     .wrap-5 {
@@ -166,7 +193,14 @@
         order: 5;
         
     }
-    .wrap-4 .label,
+    .wrap-4 .label.in-stock-label{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .wrap-4 .label.in-stock-label .check-icon {
+        margin-left: 10px;
+    }
     .wrap-5 .label {
         display: flex;
         justify-content: space-between;
@@ -176,8 +210,9 @@
     .wrap-5 .label span {
         margin-top: 5px;
     }
-    .wrap-4 .label .check-icon {
-        margin-left: 10px;
+    .wrap-4 .label .alert-icon,
+    .wrap-4 .label .into-icon {
+        margin-left: 3px;
     }
     .save-value {
         display: block;

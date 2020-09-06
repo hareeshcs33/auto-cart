@@ -124,6 +124,8 @@
 .alert-icon {
     color: #fff;
     font-size: 12px;
+    width: 12px;
+    height: 12px;
     border-radius: 100%;
     padding: 2px;
 }

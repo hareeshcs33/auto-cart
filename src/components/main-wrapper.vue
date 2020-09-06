@@ -6,7 +6,12 @@
       <card-bestseller></card-bestseller>
     </div>
     <div class="product-cards">
-      <card-product></card-product>
+      <card-product :isStock="'inStock'"></card-product>
+      <card-product :isStock="'alertStock'"></card-product>
+      <card-product :isStock="'noStock'"></card-product>
+      <card-product :isStock="'inStock'"></card-product>
+      <card-product :isStock="'inStock'"></card-product>
+      <card-product :isStock="'inStock'"></card-product>
     </div>
     <button type="button" class="load-more-cta">Load More Results</button>
   </div>
@@ -20,7 +25,6 @@ export default {
   name: 'main-wrapper',
   data () {
     return {
-      
     }
   },
   components: {
@@ -73,7 +77,7 @@ a {
 }
 @media (max-width: 767px){
   .main-wrapper {
-    padding: 15px;
+    padding: 10px;
   }
   .best-seller-block {
     overflow-x: auto;

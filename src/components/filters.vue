@@ -21,11 +21,11 @@
 <style>
 header {
   border-bottom: 1px solid #000;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   padding-bottom: 10px;
 }
 .page-title {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 .filter-block {
   display: flex;
