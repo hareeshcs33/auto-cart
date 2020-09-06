@@ -42,5 +42,6 @@ body {
 
 body {
   background-color: #e2e2e2;
+  font-size: 13px;
 }
 </style>

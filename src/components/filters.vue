@@ -18,7 +18,6 @@
     </div>
   </header>
 </template>
-
 <style>
 header {
   border-bottom: 1px solid #000;

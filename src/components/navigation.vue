@@ -82,6 +82,7 @@ export default {
 .search-box input {
   width: 100%;
   height: 36px;
+  border: 1px solid #e2e2e2;
   border-radius: 21px;
   padding: 10px 40px 10px 10px;
 }
