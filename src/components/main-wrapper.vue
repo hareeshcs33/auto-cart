@@ -17,26 +17,22 @@
   </div>
 </template>
 <script>
-import Filters from './filters.vue';
-import CardBestseller from './card-bestseller';
-import CardProduct from './card-product';
+import Filters from "./filters.vue";
+import CardBestseller from "./card-bestseller";
+import CardProduct from "./card-product";
 
 export default {
-  name: 'main-wrapper',
-  data () {
-    return {
-    }
-  },
   components: {
     Filters,
     CardBestseller,
     CardProduct
   }
-}
+};
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
@@ -75,7 +71,7 @@ a {
   padding: 10px;
   cursor: pointer;
 }
-@media (max-width: 767px){
+@media (max-width: 767px) {
   .main-wrapper {
     padding: 10px;
   }
