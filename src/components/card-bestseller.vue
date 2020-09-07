@@ -1,6 +1,6 @@
 <template>
     <div class="best-seller-card card">
-        <div class="bestseller-label">Premium Bestseller</div>
+        <div class="bestseller-label">{{productBestseller}} Bestseller</div>
         <div class="card-content">
             <div class="img-block">
                 <img src="../assets/auto-wheel.png" alt="Auto Express" />
@@ -41,6 +41,18 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    props: [
+        'productType'
+    ],
+    computed: {
+        productBestseller(){
+            return this.productType === 'Premium' ? 'Premium' : 'Economy'
+        }
+    }
+}
+</script>
 <style scoped>
 .card {
     background-color: #fff;

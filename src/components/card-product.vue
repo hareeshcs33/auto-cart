@@ -31,9 +31,13 @@
         </div>
         <div class="wrap-box wrap-8">
             <div class="add-count-cta">
-                <button type="button" class="add-cart-cta">
+                <button type="button" class="add-cart-cta" v-if="isStock !== 'noStock'">
                     <i class="fas fa-cart-plus cart-plus"></i>
                     <span class="add-cta-text">Add to Cart</span>
+                </button>
+                <button type="button" class="add-cart-cta notify-cta" v-if="isStock === 'noStock'">
+                    <i class="fas fa-bell cart-plus"></i>
+                    Notify Me!
                 </button>
             </div>
         </div>
@@ -110,6 +114,11 @@ export default {
     padding: 6px 15px;
     cursor: pointer;
 }
+.add-count-cta .add-cart-cta.notify-cta {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid orange;
+}
 .add-count-cta .cart-plus {
     font-size: 20px;
     margin-right: 5px;
@@ -183,6 +192,7 @@ export default {
     .wrap-3 {
         width: 50%;
         order: 2;
+        padding-left: 4px;
     }
     .wrap-4 {
         width: 26%;
@@ -191,7 +201,7 @@ export default {
     .wrap-5 {
         width: 22%;
         order: 5;
-        
+        padding-left: 4px;
     }
     .wrap-4 .label.in-stock-label{
         display: flex;
@@ -231,6 +241,7 @@ export default {
     .wrap-8 {
         width: 50%;
         order: 8;
+        padding-left: 4px;
     }
 }
 @media (max-width: 767px) {

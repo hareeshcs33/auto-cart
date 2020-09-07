@@ -2,8 +2,8 @@
   <div class="main-wrapper">
     <filters></filters>
     <div class="best-seller-block">
-      <card-bestseller></card-bestseller>
-      <card-bestseller></card-bestseller>
+      <card-bestseller :productType="'Premium'"></card-bestseller>
+      <card-bestseller :productType="'Economy'"></card-bestseller>
     </div>
     <div class="product-cards">
       <card-product :isStock="'inStock'"></card-product>
